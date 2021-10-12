@@ -1,9 +1,12 @@
 var sum_to_n_a = function(n) {
-    if (n == 1) {
-        return n;
-    } else {
-        return n + function(n - 1);
+    function sum(n) {
+        if (n == 1) {
+            return n;
+        } else {
+            return n + sum(n - 1);
+        }
     }
+    return sum(n);
 };
 
 var sum_to_n_b = function(n) {
@@ -17,3 +20,7 @@ var sum_to_n_b = function(n) {
 var sum_to_n_c = function(n) {
     return (n * (1 + n)) / 2;
 };
+
+console.log(sum_to_n_a(5));
+console.log(sum_to_n_b(5));
+console.log(sum_to_n_c(5));
