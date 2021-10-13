@@ -4,21 +4,24 @@ class Datasource {
     }
     getPrices() {
         let promise = new Promise((resolve, reject) => {
-            let rawData = fetch(this.source).then(response => {
+            let rawData = fetch(this.source)
+            .then(response => {
                 if (response.ok) {
                     return response.json();
                 } else {
                     reject('HTTP error! status: ${response.status}');
+                    return;
                 }
+            }).then(json => {
+                let responseArr = [];
+                json.data.prices.forEach(item => {
+                    responseArr.push(new PriceObj(item.pair, item.buy, item.sell));
+                });
+                resolve('');
+                return responseArr;
             }).catch( e => {
-                console.log("Failed.");
+                console.log("Failed: ${e}");
             });
-            let responseArr = [];
-            rawData.data.prices.forEach(item => {
-                responseArr.push(new PriceObj(item.pair, item.buy, item.sell));
-            });
-            resolve('');
-            return responseArr;
         });
         return promise;
     }
