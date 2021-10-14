@@ -5,21 +5,33 @@
   <title>Fancy Form</title>
 
   <!-- You may add more stuff here -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="style.css" rel="stylesheet" />
 </head>
 
 <body>
 
   <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
+  <div class="w3-top">
+    <div class="w3-bar w3-theme-d2 w3-left-align">
+      <a href="https://www.switcheo.com/" class="w3-bar-item w3-button w3-blue"><i class="fa fa-home w3-margin-right"></i>HOME</a>
+	  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Transfer ETH</a>
+    </div>
+  </div>
+  <div class="w3-container" style="padding-top:64">
+    <h1>Transfer ETH</h1>
+	<p>Send ethereum effortlessly and quickly with our website! Simply fill out the fields below and our system will handle the rest!</p>
+  </div>
   <form onsubmit="return !1">
-    <label for="input-address">ETH Address</label>
-    <input id="input-address" />
+    <label for="input-address">ETH Address</label><br>
+    <input id="input-address" /><br><br>
 
-    <label for="input-amount">Amount to send</label>
-    <input id="input-amount" />
+    <label for="input-amount">Amount to send</label><br>
+    <input id="input-amount" /><br><br>
 
-    <label for="input-otp">OTP Authentication</label>
-    <input type="number" id="input-otp" />
+    <label for="input-otp">OTP Authentication</label><br>
+    <input type="number" id="input-otp" /><br><br>
 
     <button>SEND TOKENS</button>
   </form>
