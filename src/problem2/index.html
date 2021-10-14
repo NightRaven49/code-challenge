@@ -24,16 +24,28 @@
 	<p>Send ethereum effortlessly and quickly with our website! Simply fill out the fields below and our system will handle the rest!</p>
   </div>
   <form onsubmit="return !1">
-    <label for="input-address">ETH Address</label><br>
-    <input id="input-address" /><br><br>
+    <div id="address">
+      <label for="input-address">ETH Address</label><br>
+      <input id="input-address" oninput="checkAddress(this)" />
+	  <div id="addressErr"/>
+	  <br>
+	</div>
+    
+	<div id="amount">
+      <label for="input-amount">Amount of ETH to send</label><br>
+      <input id="input-amount" oninput="checkAmount(this)" />
+	  <div id="amtErr"/>
+	  <br>
+	</div>
 
-    <label for="input-amount">Amount to send</label><br>
-    <input id="input-amount" /><br><br>
+	<div id="otp">
+      <label for="input-otp">6-digit OTP Authentication</label><br>
+      <input type="number id="input-otp" oninput="checkOTP(this)" />
+	  <div id="otpErr"/>
+	  <br>
+	</div>
 
-    <label for="input-otp">OTP Authentication</label><br>
-    <input type="number" id="input-otp" /><br><br>
-
-    <button>SEND TOKENS</button>
+    <button onclick="confirm()" >SEND TOKENS</button>
   </form>
   <script src="script.js"></script>
 </body>
